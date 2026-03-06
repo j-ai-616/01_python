@@ -29,13 +29,13 @@ def run():
         show_menu()
         choice = input("메뉴 선택: ").strip()
 
-        if choice == "1":
+        if choice == "1":  # 아래에 유효성 검사 만들어 둠
             date = input_non_empty("날짜(YYYY-MM-DD): ")
             topic = input_non_empty("주제: ")
             minutes = input_positive_int("학습 시간(분): ")
             memo = input_non_empty("메모: ")
 
-            add_log(date, topic, minutes, memo)
+            add_log(date, topic, minutes, memo)  # 저장해주세요
             print("저장 완료")
 
         elif choice == "2":
