@@ -18,7 +18,7 @@ def add_log(date, topic, minutes, memo):
 
 def get_all_logs():
     # TODO: load_logs 결과 반환
-    pass
+    return load_logs()  # 파일을 로드해서 로그를 보여주세요.
 
 def find_by_date(target_date):
     # TODO: load_logs를 불러와서 date가 target_date인 것만 필터링해 반환

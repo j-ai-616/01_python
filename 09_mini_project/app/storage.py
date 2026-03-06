@@ -31,4 +31,16 @@ def load_logs():
     # TODO: FILE_PATH를 "r"로 열고 한 줄씩 읽어 StudyLog 리스트로 반환
     # TODO: 빈 줄은 무시
     # TODO: FileNotFoundError면 빈 리스트 반환
-    pass
+    ensure_data_dir()
+    logs = []
+    
+    try:
+        with open(FILE_PATH, "r", encoding="utf-8") as file:
+            for line in file:
+                if line.strip() == "": 
+                    continue
+                logs.append(StudyLog.from_line(line))
+    except FileNotFoundError:
+        return []
+    
+    return logs

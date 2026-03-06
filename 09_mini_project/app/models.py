@@ -19,12 +19,13 @@ class StudyLog:
         # TODO: "날짜|주제|분|메모" 형식의 1줄 문자열을 반환한다.
         return f"{self.date}|{self.topic}|{self.minutes}|{self.memo}"
 
-    @staticmethod
+    @staticmethod  # StudyLog 객체와 연관은 논리적으로 있으나, 구지 self 등을 가져올 필요가 없는 것
     def from_line(line):
         # TODO: line을 split("|")해서 StudyLog 객체로 변환해 반환한다.
         # TODO: minutes는 int로 변환한다.
-        pass
+        date, topic, minutes, memo = line.strip().split("|")  # 리스트가 반환된다.
+        return StudyLog(date, topic, int(minutes), memo)
 
     def __str__(self):
         # TODO: 화면 출력용 문자열을 반환한다. 예) "2026-03-05 | file io | 45분 | memo..."
-        pass
+        return f"{self.date} | {self.topic} | {self.minutes} | {self.memo}"
