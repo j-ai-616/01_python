@@ -1,5 +1,5 @@
 '''
-RuntimeException: 실행 중 발생하는 예외. => 예외 처리
+RuntimeException: 실행 중 발생하는 예외. (에러 발생 시 프로그램 종료됨)=> 예외 처리
 SyntaxError: 문법 에러. 실행 전에 코드 형식 자체가 틀림. => 예외 처리 대상 아님
 '''
 
