@@ -22,8 +22,17 @@ def get_all_logs():
 
 def find_by_date(target_date):
     # TODO: load_logs를 불러와서 date가 target_date인 것만 필터링해 반환
-    pass
+    logs = load_logs()
+    return [log for log in logs if log.date == target_date]
 
 def sum_by_topic():
     # TODO: load_logs를 불러와 topic별 minutes 합계를 dict로 만들어 반환
-    pass
+    logs = load_logs()
+    result = {}
+    
+    for log in logs:
+        if log.topic not in result:
+            result[log.topic] = 0           # { "OOP" : 0 }
+        result[log.topic] += log.minutes    # { "OOP" : 60 } -> { "OOP" : 120 }
+    
+    return result
