@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# virtual environment
+venv/
+.env
+.pystudy_env/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# data files (optional)
+*.log
+08_exception/__pycache__/exception_basic.cpython-312.pyc
